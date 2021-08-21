@@ -63,10 +63,10 @@ document.getElementById('1tb-ss-storage').addEventListener('click',function(){
 
 function changeDeliveryCharge(difference){
     if(difference==true){
-        document.getElementById('delivery-cost').innerText=20;
+        document.getElementById('delivery-cost').innerText='20';
     }
     else{
-        document.getElementById('delivery-cost').innerText=0;
+        document.getElementById('delivery-cost').innerText='0';
     }
     getTotalPrice();
     disableButton(false);
@@ -82,7 +82,7 @@ function changeDeliveryCharge(difference){
     })
     
     
-
+// *******total price portion****/////
 function getTotalPrice(){
     const bestPrice = parseFloat(document.getElementById('best-price').innerText);
     const extraMemoryCost = parseFloat(document.getElementById('extra-memory-cost').innerText);
@@ -97,6 +97,9 @@ function getTotalPrice(){
 
 }
 
+
+// promo code portion//////
+
 function discountTotal(){
     const newInput=document.getElementById('new-input');
     const input=newInput.value;
@@ -104,13 +107,15 @@ if(input=='stevekaku'){
    const newTotal= parseFloat(document.getElementById('new-total-price').innerText);
    const discount=newTotal*0.2;
    const modifiedTotal=newTotal-discount;
-//    document.getElementById('total-price').innerText=modifiedTotal;
+
    document.getElementById('new-total-price').innerText=modifiedTotal;
    disableButton(true);
 }
 
 newInput.value='';
 }
+
+//$$$$ accept button disable portion $$$$//////
 function disableButton(yes){
     if(yes){
     const button = document.getElementById('apply-button');
